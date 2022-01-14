@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    font-size: 14px;
+    font-family: inter;
+    max-width: 1020px;
+    margin: 0 auto;
+}
+
+.headerWrap {
+    display: flex;
+    width: 100%;
+}
+
+.navBox {
+    display: flex;
+    flex: 1;
+}
+
+.dropMenu {
+    position: relative;
+}
+
+.dropMenu:hover>.menu {
+    width: 150px;
+    display: block;
+}
+
+.menu {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    display: none;
+}
