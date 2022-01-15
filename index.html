@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <title>News App</title>
 </head>
@@ -13,25 +16,29 @@
     <header>
         <div class="container">
             <div class="headerWrap">
-                <div class="logoHold">
-                    <a href="#">News App</a>
+                <div class="logo">
+                    <a class="linkReset" ref="# ">News App</a>
                 </div>
                 <nav class="navBox">
                     <form class="search">
-                        <input type="search" placeholder="Type something to start search" name="search">
+                        <input type="search" class="searchBar" placeholder="Type something to start search">
+                        <div class="searchBtn"><img src="images/misc/search.png" alt="search"></div>
                     </form>
                     <div class="navBar">
                         <div class="dropMenu">
-                            <button class="dropperBtn">Categories</button>
-                            <div class="menu">afrasgserg</div>
+                            <span class="dropperBtn">Categories</span>
+                            <div class="menuOuter">
+                                <ul class="menu">afrasgserg</ul>
+                            </div>
                         </div>
-                        <button class="trendingBtn"><span>⚡️</span> Trending news</button>
+                        <span class="trendingBtn"><span>⚡️</span> Trending news</span>
                     </div>
                 </nav>
                 <div class="burger">byrger</div>
             </div>
         </div>
     </header>
+    <main></main>
     <script src="js/main.js"></script>
 </body>
 

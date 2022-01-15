@@ -3,3 +3,14 @@ fetch(
     )
     .then(response => response.json())
     .then(response => console.log(response));
+
+/* let input = document.getElementsByClassName('searchBar')[0];
+console.log(input);
+input.addEventListener("input", (e) => {
+
+    console.log(e.inputType)
+}) */
+
+/* const dropper = document.getElementsByClassName('dropperBtn')[0];
+const menu = document.getElementsByClassName('menu')[0];
+dropper.addEventListener('mouseover', () => menu.style.display = 'block') */
