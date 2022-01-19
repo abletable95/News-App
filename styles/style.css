@@ -11,6 +11,7 @@
         line-height: 17px;
         position: relative;
         scroll-behavior: smooth;
+        position: relative;
     }
     
     ul {
@@ -18,8 +19,8 @@
     }
     
     img {
-        max-width: 100%;
-        height: auto;
+        max-height: 100%;
+        width: auto;
     }
     
     .linkReset {
@@ -33,6 +34,10 @@
         margin: 0 auto;
     }
     /* Header part ########################################### */
+    
+    header {
+        margin-bottom: 30px;
+    }
     
     .headerWrap {
         display: flex;
@@ -144,6 +149,7 @@
         flex-wrap: wrap;
         flex-direction: column;
         padding: 14px 0;
+        background: #ffffff;
     }
     
     .menu::before {
@@ -175,6 +181,37 @@
     .trendingBtn {
         margin-left: 60px;
         cursor: pointer;
+    }
+    /* search results */
+    
+    .searchResults {
+        position: absolute;
+        top: 32px;
+        left: 0;
+        right: 0;
+        box-shadow: 0px 0px 4px #BDBDBD;
+        border-radius: 0 0 5px 5px;
+        background-color: #ffffff;
+        max-height: 400px;
+        overflow-y: scroll;
+        display: none;
+    }
+    
+    .activeResults {
+        display: block;
+    }
+    
+    .searchResults li {
+        padding: 10px;
+        box-shadow: 0px 0px 4px #BDBDBD;
+    }
+    
+    .searchResults h4 {
+        margin-bottom: 5px;
+    }
+    
+    .searchResults span {
+        color: #718096;
     }
     /* burger button########### */
     
@@ -218,3 +255,135 @@
         transform: translate(-50%, 0%) rotate(-45deg);
     }
     /* main article ################### */
+    
+    .mainArticle {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid #E2E2E2;
+        box-shadow: 0px 5px 4px rgba(221, 221, 221, 0.25);
+        border-radius: 5px;
+        margin-bottom: 30px;
+    }
+    
+    .mainArticle p,
+    .mainArticle span {
+        color: #718096;
+    }
+    
+    .mainArticle a {
+        font-weight: bold;
+        color: #2D3748;
+    }
+    
+    .mainText {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 60%;
+        padding: 40px 55px;
+    }
+    
+    .mainTitle {
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 25px
+    }
+    
+    .articleFooter {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .mainImage {
+        line-height: 0;
+        height: 243px;
+    }
+    /* articles box########## */
+    
+    .articlesBox {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 30px;
+        column-gap: 60px;
+    }
+    
+    .article {
+        max-width: 300px;
+        box-shadow: 0px 4px 4px rgba(192, 189, 189, 0.25);
+        border-radius: 5px;
+    }
+    
+    .article a {
+        font-weight: bold;
+        color: #2D3748;
+    }
+    
+    .articleImage img {
+        min-height: 180px;
+    }
+    
+    .article h3 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    
+    .article img {
+        max-width: 300px;
+    }
+    
+    .articleText {
+        padding: 15px;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    /* footer############### */
+    
+    footer {
+        padding: 18px 0;
+        border-top: 1px solid #E8E8E8;
+    }
+    
+    .footertext {
+        font-size: 16px;
+    }
+    
+    .footerHeavy {
+        font-weight: bold;
+    }
+    /* Scroll top */
+    
+    .scrollTop {
+        height: 150px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    .scrollTopBtn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 9px 11px;
+        min-width: 140px;
+        background: #2F80ED;
+        border-radius: 5px;
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        pointer-events: none;
+        opacity: 0;
+        position: fixed;
+        bottom: 110px;
+        right: 150px;
+        transition: all 200ms;
+    }
+    
+    .activeScroll {
+        pointer-events: auto;
+        opacity: 1;
+    }
