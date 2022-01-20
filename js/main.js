@@ -9,6 +9,9 @@ const year = document.getElementsByClassName('year')[0];
 const scrollTopBtn = document.getElementsByClassName('scrollTopBtn')[0];
 const actualYear = new Date().getFullYear();
 const body = document.querySelector('body');
+const loader = document.getElementsByClassName('loader')[0];
+const menu = document.getElementsByClassName('menu')[0];
+const trendingBtn = document.getElementsByClassName('trendingBtn')[0];
 year.innerHTML = actualYear;
 
 // Menu handling
@@ -20,6 +23,7 @@ burger.addEventListener('click', () => {
 
 // request news
 function requestNews(category, action, amount) {
+    loaderSpinner()
     fetch(
             `https://content.guardianapis.com/search?q=${category}&show-tags=all&page-size=${amount}&show-fields=all&order-by=relevance&api-key=5ef33414-1934-47dc-9892-5d09ab7c00da`
         )
@@ -27,6 +31,7 @@ function requestNews(category, action, amount) {
         .then(response => {
             sortByDate(response.response.results);
             action(response.response.results)
+            loaderSpinner()
         });
 }
 requestNews('trending', createArticles, 19)
@@ -39,6 +44,7 @@ function sortByDate(newsArr) {
 
 function createArticles(news) {
     createMainArticle(news[0])
+    articlesBox.innerHTML = '';
     restNews = news.filter(item => {
         if (item != news[0]) return item
     });
@@ -65,7 +71,6 @@ function createArticles(news) {
 }
 
 function createMainArticle(item) {
-    console.log(item);
     mainArticle.innerHTML =
         `<article class="mainText">
         <a href="article.html?${item.id}" class="mainTitle linkReset">
@@ -127,13 +132,6 @@ input.addEventListener('search', (e) => {
         searchResultsBox.innerHTML = ''
     }
 });
-input.onfocus = () => {
-    searchResultsBox.classList.add('activeResults')
-
-}
-input.onblur = () => {
-    searchResultsBox.classList.remove('activeResults')
-}
 
 function submitSearch() {
     let searchText = input.value.trim().replace(/ /ig, '%20');
@@ -149,7 +147,7 @@ function handleSearhResults(results) {
         results.map(item => {
             let link = document.createElement('li')
             link.innerHTML =
-                ` <a href="article.html?${item.id}" class="linkReset">
+                `<a href="article.html?${item.id}" class="linkReset">
                 <h4>${item.fields.headline}</h4>
                 <span>${item.fields.trailText}...</span>
             </a>`
@@ -159,3 +157,19 @@ function handleSearhResults(results) {
         searchResultsBox.innerHTML = '<li>No exact matches found</li>';
     }
 }
+
+//Loader#######
+function loaderSpinner() {
+    loader.classList.toggle('loading');
+}
+//menu in header
+
+menu.addEventListener('click', (e) => {
+    let category = e.target.innerText.trim().toLowerCase();
+    requestNews(category, createArticles, 19)
+})
+
+trendingBtn.addEventListener('click', () => {
+
+    requestNews('trending', createArticles, 19)
+})

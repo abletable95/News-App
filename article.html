@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/secondPage.css">
     <title>News App</title>
 </head>
 
@@ -17,13 +17,16 @@
         <div class="container">
             <div class="headerWrap">
                 <div class="logo">
-                    <a class="linkReset" ref="# ">News App</a>
+                    <a class="linkReset" href="index.html">News App</a>
                 </div>
                 <nav class="navBox">
-                    <form class="search">
+                    <div class="search">
                         <input type="search" class="searchBar" placeholder="Type something to start search">
                         <div class="searchBtn"><img src="images/misc/search.png" alt="search"></div>
-                    </form>
+                        <ul class="searchResults">
+
+                        </ul>
+                    </div>
                     <div id="navBar">
                         <div class="dropMenu ">
                             <span class="dropperBtn">Categories</span>
@@ -53,10 +56,34 @@
     </header>
     <main>
         <div class="container">
-
+            <section class="articleHold">
+                <div class="mainImage">
+                    <img src="" alt="image">
+                </div>
+                <div class="articleText">
+                    <div class="title">
+                        <h1></h1>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="text"></div>
+                </div>
+            </section>
+            <div class="scrollTop">
+                <button class="scrollTopBtn">
+                    <span>Scroll to top</span>
+                    <img src="images/misc/arrow.svg" alt="arrow">
+                </button>
+            </div>
+            <div class="loader"></div>
         </div>
     </main>
-    <script src="js/main.js "></script>
+    <footer>
+        <div class="container">
+            <span class="footertext"><span class="footerHeavy">News App</span> 2021-<span class="year"></span> copyright&copy; all rights reserved</span>
+        </div>
+    </footer>
+    <script src="js/page2.js "></script>
 </body>
 
 </html>
